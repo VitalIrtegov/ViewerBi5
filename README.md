@@ -2,7 +2,6 @@
 
 ![C++](https://img.shields.io/badge/language-C%2B%2B17-blue.svg)
 ![Qt](https://img.shields.io/badge/framework-Qt6/Qt5-green.svg)
-![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 Утилита на C++/Qt для распаковки и анализа файлов биржевых котировок формата `.bi5` (Dukascopy).
 
@@ -17,7 +16,7 @@
 * **LZMA Decompression**: Direct integration of LZMA SDK for high-performance extraction.
 * **Dukascopy Format Parsing**: Decodes the 20-byte binary structure of each tick.
 * **Data Visualization**: Displays Tick #, Time (ms), Ask, Bid, and Volumes in a formatted list.
-* **Export Capability**: Save the processed data into `.txt` or `.csv` files.
+* **Export Capability**: Save the processed data into `.txt` file.
 * **Clean GUI**: Built with Qt, featuring an intuitive layout and responsive design.
 
 ### Technical Details
@@ -36,7 +35,7 @@
 * **Распаковка LZMA**: Прямая интеграция LZMA SDK для быстрой обработки данных.
 * **Парсинг формата Dukascopy**: Декодирование 20-байтовой бинарной структуры каждого тика.
 * **Визуализация**: Отображение номера тика, времени (мс), цен Ask/Bid и объемов в удобном списке.
-* **Экспорт**: Сохранение расшифрованных данных в файлы `.txt` или `.csv`.
+* **Экспорт**: Сохранение расшифрованных данных в файл `.txt`.
 * **Интерфейс**: Чистый GUI на базе Qt с удобным расположением элементов.
 
 ---
