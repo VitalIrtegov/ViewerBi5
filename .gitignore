@@ -1,0 +1,5 @@
+# Временные файлы Qt и CMake
+build/
+build-*/
+
+*.ninja
