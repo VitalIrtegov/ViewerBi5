@@ -51,5 +51,28 @@
 3.  **Build / Соберите проект**:
     Use Ninja or MinGW to compile the executable.
 
+## 🔍 Technical Details / Технические подробности
+
+### Tick Data Structure (20 bytes) / Структура тика (20 байт)
+Each tick in the decompressed `.bi5` file follows a strict 20-byte binary format:
+Каждый тик в распакованном файле `.bi5` имеет строгое 20-байтовое представление:
+
+| Offset | Size | Type | Description (EN) | Описание (RU) |
+| :--- | :--- | :--- | :--- | :--- |
+| 0 | 4 | `int32` | Time (ms since start of hour) | Время (мс с начала часа) |
+| 4 | 4 | `int32` | Ask Price (Price * 100,000) | Цена Ask (Цена * 100,000) |
+| 8 | 4 | `int32` | Bid Price (Price * 100,000) | Цена Bid (Цена * 100,000) |
+| 12 | 4 | `float` | Ask Volume (Liquidity in millions) | Объем Ask (в миллионах) |
+| 16 | 4 | `float` | Bid Volume (Liquidity in millions) | Объем Bid (в миллионах) |
+
+> **Note:** All multi-byte values are stored in **Big Endian** format and must be converted for x86/x64 systems.
+> **Примечание:** Все многобайтовые значения хранятся в формате **Big Endian** и должны быть преобразованы для систем x86/x64.
+
+### LZMA Header (13 bytes) / Заголовок LZMA (13 байт)
+The original `.bi5` file contains a custom header before the compressed payload:
+Оригинальный файл `.bi5` содержит заголовок перед сжатыми данными:
+1. **LZMA Properties** (5 bytes): Used by `LzmaDecode`.
+2. **Uncompressed Size** (8 bytes): 64-bit integer (Little Endian).
+
 ---
 *Developed as a practice in C++ and Qt binary data processing.*
